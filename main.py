@@ -6,13 +6,16 @@ from sympy.abc import x
 A, B, C = symbols('A B C')
 y = Function('f')
 
-# Initialisation
-A = int(input('A ?'))
-B = int(input('B ?'))
-C = int(input('C ?'))
+# ESSM
+print("Enter coefficient from your Differential Equation (Ay''(x)+By'(x)+Cy(x))")
 
-# Processing Equation
-s0 = dsolve(A*Derivative(y(x), x, x) + B*Derivative(y(x), x) + C*y(x), y(x))
+A = int(input('A ? > '))
+B = int(input('B ? > '))
+C = int(input('C ? > '))
 
-# Result
+# Processing ESSM
+eq = (Eq(A*Derivative(y(x), x, x) + B*Derivative(y(x), x) + C*y(x), y(x)))
+s0 = dsolve(eq)
+
+# Result ESSM
 print(s0)
